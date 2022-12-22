@@ -8,6 +8,7 @@ const MainBreadcrumb = () => {
   const BreadcrumbConfigure: Record<string, string> = {
     "/action/strategy": "strategy",
     "/action/TestSports": "sports",
+    "/action/Echarts": "echarts",
   };
 
   return BreadcrumbConfigure[location.pathname] ? (

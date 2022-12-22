@@ -3,6 +3,7 @@ import { ReactNode } from "react";
 import BasicStrategy from "../views/strategyReservation/BasicStrategy";
 import MenuLayout from "../layouts/MenuLayout";
 import TestSports from "../views/strategyReservation/TestSports";
+import Echarts from "../views/strategyReservation/Echarts";
 
 type KZRoute = {
   // 布局组件
@@ -15,9 +16,9 @@ type KZRoute = {
 
 const CustomRouter: KZRoute[] = [
   {
-    layout: <div></div>,
-    component: <div></div>,
-    path: "/plug-manage-user",
+    layout: <MenuLayout />,
+    component: <Echarts />,
+    path: "/action/Echarts",
   },
   {
     layout: <MenuLayout />,
