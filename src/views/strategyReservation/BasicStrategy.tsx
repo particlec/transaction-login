@@ -9,7 +9,7 @@ const BasicStrategy = () => {
     mockApi
       .getTest()
       .then((res: any) => {
-        console.log(res);
+        console.log(res.data);
       })
       .catch();
   }, []);
