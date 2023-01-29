@@ -30,17 +30,17 @@ const SideMenu = () => {
 
   const items: MenuItem[] = [
     getItem("strategyReservation", "sub1", <UserOutlined />, [
-      getItem("Option 1", "/action/strategy"),
-      getItem("Option 2", "/action/TestSports"),
-      getItem("Option 3", "/action/Echarts"),
+      getItem("strategy", "/action/Strategy"),
+      getItem("testSports", "/action/TestSports"),
+      getItem("echarts", "/action/Echarts"),
     ]),
     getItem("sportsStrategy", "sub2", <LaptopOutlined />, [
       getItem("Option 5", "5"),
       getItem("Option 6", "6"),
     ]),
     getItem("riskAssessment", "sub4", <NotificationOutlined />, [
-      getItem("Option 9", "9"),
-      getItem("Option 10", "10"),
+      getItem("TB", "risk/TB"),
+      getItem("funds", "risk/Funds"),
       getItem("Option 11", "11"),
       getItem("Option 12", "12"),
     ]),

@@ -5,6 +5,8 @@ import MenuLayout from "../layouts/MenuLayout";
 import TestSports from "../views/strategyReservation/TestSports";
 import Echarts from "../views/strategyReservation/Echarts";
 import EchartImformation from "../views/strategyReservation/EchartImformation";
+import TB from "../views/riskAssessment/TB";
+import NewFunds from "../views/riskAssessment/NewFunds";
 
 type KZRoute = {
   // 布局组件
@@ -36,9 +38,20 @@ const CustomRouter: KZRoute[] = [
   {
     layout: <MenuLayout />,
     component: <BasicStrategy />,
-    path: "/action/strategy",
+    path: "/action/Strategy",
   },
 
+  {
+    layout: <MenuLayout />,
+    component: <TB />,
+    path: "risk/TB",
+  },
+
+  {
+    layout: <MenuLayout />,
+    component: <NewFunds />,
+    path: "risk/Funds",
+  },
   { component: <Navigate to="/action/strategy" />, path: "*" },
 ];
 

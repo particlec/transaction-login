@@ -1,9 +1,8 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Line } from "@ant-design/plots";
+
 const EchartImformation = () => {
   const [data, setData] = useState([]);
-
-  console.log(data);
 
   useEffect(() => {
     asyncFetch();
@@ -20,10 +19,12 @@ const EchartImformation = () => {
       });
   };
 
-  // 获取交点时间数组
-  const intersection = useMemo(() => {
-    return [];
-  }, [data]);
+  // // 获取交点时间数组
+  // const intersection = useMemo(() => {
+  //   let newData = _.cloneDeep(data);
+  //
+  //   return newData;
+  // }, [data]);
 
   const config = {
     data,
@@ -45,3 +46,5 @@ const EchartImformation = () => {
   return <Line {...config} />;
 };
 export default EchartImformation;
+
+//找历史数据

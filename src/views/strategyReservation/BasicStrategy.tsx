@@ -3,7 +3,7 @@ import mockApi from "../../apis/mockApi";
 
 const BasicStrategy = () => {
   // 获取辅与t的相遇时刻
-  const getIntersectionTime = () => {};
+  // const getIntersectionTime = () => {};
 
   useEffect(() => {
     mockApi
