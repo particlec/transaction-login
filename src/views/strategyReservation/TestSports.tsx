@@ -1,21 +1,26 @@
-import React from "react";
-// import _ from "lodash";
-// const _ = require("lodash");
+import React, { useState } from "react";
+
+import CanvasModal from "./canvasModal";
+import { Button } from "antd";
+
 const TestSports = () => {
-  // const arr = [
-  //   { a: new Date() },
-  //   { b: new RegExp("\\w+") },
-  //   {
-  //     c: function () {
-  //       console.log("aaa function");
-  //     },
-  //   },
-  //   { d: undefined },
-  //   { e: Symbol(42) },
-  // ];
+  const [isOpen, setIsOpen] = useState(false);
 
-  // console.log(_.cloneDeep(arr));
+  // 把flex 换成绝对定位
+  return (
+    <>
+      <div>
+        <Button
+          onClick={() => {
+            setIsOpen(true);
+          }}
+        >
+          openModal
+        </Button>
+      </div>
 
-  return <div>test</div>;
+      {isOpen && <CanvasModal />}
+    </>
+  );
 };
 export default TestSports;
