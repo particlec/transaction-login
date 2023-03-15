@@ -12,6 +12,7 @@ import React, {
 } from "react";
 import { Topology } from "@topology/core";
 import UtCanvas from "../topologyCanvas/UtCanvas";
+import util from "./../topologyCanvas/utils";
 
 const CanvasModal = () => {
   const [isContextMenuShow, setIsContextMenuShow] = useState(false);
@@ -22,6 +23,8 @@ const CanvasModal = () => {
 
   const topologyRef = useRef<Topology>();
   const utCanvasRef = useRef<UtCanvas>();
+
+  const commandExecutor = util.getCommandExecutor(topologyRef);
 
   useEffect(() => {
     // id topology 的当作背景了
@@ -57,7 +60,7 @@ const CanvasModal = () => {
 
   return (
     <ModalStyle
-      visible
+      open
       maskClosable={false}
       title="流程图编辑"
       width="800px"
@@ -70,7 +73,12 @@ const CanvasModal = () => {
           utCanvas: utCanvasRef.current,
         }}
       >
-        <HeaderCanvas />
+        <HeaderCanvas
+          commandExecutor={commandExecutor}
+          onClick={() => {
+            console.log(1);
+          }}
+        />
         <ToolsPanel />
 
         <div className="canvas-panel" onContextMenu={onContextMenu}>
@@ -92,12 +100,6 @@ const ModalStyle = styled(Modal)`
     width: 100%;
     height: 600px;
     position: relative;
-    background: white;
-    background-image: linear-gradient(
-        90deg,
-        rgba(241, 243, 244, 1) 10%,
-        transparent 0
-      ),
       linear-gradient(rgba(241, 243, 244, 1) 10%, transparent 0);
     background-size: 10px 10px;
   }
